@@ -1,6 +1,7 @@
-import './App.css';
 import PDFController from "../controller/pdfController"
 import React from "react"
+
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,40 +16,50 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
-          Give A Gift Admin
+        <div className="header">
+          <h1>Give A Gift Admin</h1>
         </div>
 
-        <div>Name:</div>
+        <div><h2>Name:</h2></div>
         <input
+          className="textField"
           value={this.state.name}
+          placeholder="Name"
           onChange={(e) => {
             this.setState({ ...this.state, name: e.target.value })
           }}
           required
         />
 
-        <div>Address:</div>
+        <div><h2>Address:</h2></div>
         <input
+          className="textField"
           value={this.state.address}
+          placeholder="Address"
           onChange={(e) => {
             this.setState({ ...this.state, address: e.target.value })
           }}
           required
         />
 
-        <div>Telephone number: </div>
+        <div><h2>Telephone number:</h2></div>
         <input
+          className="textField"
           value={this.state.tel}
+          placeholder="Telephone number"
           onChange={(e) => {
             this.setState({ ...this.state, tel: e.target.value })
           }}
           required
         />
-        <div>
-
-          <button onClick={(e) => { e.preventDefault(); PDFController.printPDF(this.state); }}> Create</button>
-          <button onClick={() => this.clearInput()}> Reset</button>
+        <div className="btns">
+          <button
+            onClick={(e) => { e.preventDefault(); PDFController.printPDF(this.state); }}
+            className="btn"> Create</button>
+          <button
+            onClick={() => this.clearInput()}
+            className="btn"
+          > Reset</button>
         </div>
       </div>
     )
