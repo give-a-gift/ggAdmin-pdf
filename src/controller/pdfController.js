@@ -23,15 +23,32 @@ pdfMake.fonts = {
 function formatData(payload) {
     return [
         {
-            image: imageDict.imageDict.src[data.data.logo],
-            width: 150,
-            height: 150
+            table: {
+                widths: [500],
+                body: [
+                    [
+                        {
+                            stack: [
+                                {
+                                    columns: [
+                                        {
+                                            image: imageDict.imageDict.src[data.data.logo],
+                                            width: 110,
+                                            height: 110
+                                        },
+                                        { text: data.data.address, fontSize: 20, style: ['bold'] },
+                                    ], style: ['marginTopSender']
+                                },
+                                { text: data.data.sender.header, fontSize: 18, style: ['bold', 'marginTopLeft'] },
+                                { text: payload.name.trim(), style: ['marginLeft'] },
+                                { text: payload.address.trim(), style: ['marginLeft'] },
+                                { text: data.data.sender.telHeader + " " + payload.tel.trim(), style: ['marginBottomLeft'] },
+                            ]
+                        }
+                    ]
+                ]
+            }
         },
-        { text: data.data.address, fontSize: 22, style: ['bold'] },
-        { text: data.data.sender.header, fontSize: 18, style: ['bold'] },
-        { text: payload.name.trim() },
-        { text: payload.address.trim() },
-        { text: data.data.sender.telHeader + payload.tel.trim() },
     ]
 }
 
@@ -43,9 +60,11 @@ function printPDF(payload) {
             font: 'THSarabunNew'
         },
         styles: {
-            bold: {
-                bold: true
-            }
+            bold: { bold: true },
+            marginTopSender: { margin: [10, 10, 0, 0], },
+            marginLeft: { margin: [300, 0, 25, 0], },
+            marginTopLeft: { margin: [300, 20, 25, 0], },
+            marginBottomLeft: { margin: [300, 0, 25, 20], }
         }
     };
     pdfMake.createPdf(docDefinition).open()
