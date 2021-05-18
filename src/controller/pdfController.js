@@ -23,31 +23,50 @@ pdfMake.fonts = {
 function formatData(payload) {
     return [
         {
-            table: {
-                widths: [500],
-                body: [
-                    [
-                        {
-                            stack: [
+            stack: [
+                (payload.name !== "" && payload.address !== "" && payload.tel !== "" && ({
+                    table: {
+                        widths: [500],
+                        body: [
+                            [
                                 {
-                                    columns: [
+                                    stack: [
                                         {
-                                            image: imageDict.imageDict.src[data.data.logo],
-                                            width: 110,
-                                            height: 110
+                                            columns: [
+                                                {
+                                                    image: imageDict.imageDict.src[data.data.logo],
+                                                    width: 110,
+                                                    height: 110
+                                                },
+                                                { text: data.data.address, fontSize: 20, style: ['bold'] },
+                                            ], style: ['marginTopSender']
                                         },
-                                        { text: data.data.address, fontSize: 20, style: ['bold'] },
-                                    ], style: ['marginTopSender']
-                                },
-                                { text: data.data.sender.header, fontSize: 18, style: ['bold', 'marginTopLeft'] },
-                                { text: payload.name.trim(), style: ['marginLeft'] },
-                                { text: payload.address.trim(), style: ['marginLeft'] },
-                                { text: data.data.sender.telHeader + " " + payload.tel.trim(), style: ['marginBottomLeft'] },
+                                        { text: data.data.sender.header, fontSize: 18, style: ['bold', 'marginTopLeft'] },
+                                        { text: payload.name.trim(), style: ['marginLeft'] },
+                                        { text: payload.address.trim(), style: ['marginLeft'] },
+                                        { text: data.data.sender.telHeader + " " + payload.tel.trim(), style: ['marginBottomLeft'] },
+                                    ]
+                                }
                             ]
-                        }
-                    ]
-                ]
-            }
+                        ]
+                    }
+                })),
+                (payload.code !== "" && {
+                    table: {
+                        body: [
+                            [
+                                {
+                                    stack: [
+                                        { text: data.data.invited, fontSize: 18, style: ['invitedHeader'] },
+                                        { text: payload.code.trim(), fontSize: 20, style: ['bold', 'invitedText'] },
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                })
+            ].filter((i) => i)
+
         },
     ]
 }
@@ -64,7 +83,9 @@ function printPDF(payload) {
             marginTopSender: { margin: [10, 10, 0, 0], },
             marginLeft: { margin: [300, 0, 25, 0], },
             marginTopLeft: { margin: [300, 20, 25, 0], },
-            marginBottomLeft: { margin: [300, 0, 25, 20], }
+            marginBottomLeft: { margin: [300, 0, 25, 20], },
+            invitedHeader: { margin: [10, 10, 10, 0], },
+            invitedText: { margin: [10, 0, 10, 10], },
         }
     };
     pdfMake.createPdf(docDefinition).open()

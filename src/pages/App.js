@@ -6,11 +6,11 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { name: "", address: "", tel: "" }
+    this.state = { name: "", address: "", tel: "", code: "" }
   }
 
   clearInput = () => {
-    this.setState({ name: "", address: "", tel: "" })
+    this.setState({ name: "", address: "", tel: "", code: "" })
   }
 
   render() {
@@ -52,6 +52,18 @@ class App extends React.Component {
           }}
           required
         />
+
+        <div><h2>Invited Code:</h2></div>
+        <input
+          className="textField"
+          value={this.state.code}
+          placeholder="Invited Code"
+          onChange={(e) => {
+            this.setState({ ...this.state, code: e.target.value })
+          }}
+          required
+        />
+
         <div className="btns">
           <button
             onClick={(e) => { e.preventDefault(); PDFController.printPDF(this.state); }}
