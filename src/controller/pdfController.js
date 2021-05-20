@@ -84,8 +84,8 @@ function printPDF(payload) {
             marginLeft: { margin: [300, 0, 25, 0], },
             marginTopLeft: { margin: [300, 20, 25, 0], },
             marginBottomLeft: { margin: [300, 0, 25, 20], },
-            invitedHeader: { margin: [10, 10, 10, 0], },
-            invitedText: { margin: [10, 0, 10, 10], },
+            invitedHeader: { margin: [10, 10, 10, 0], alignment: 'center' },
+            invitedText: { margin: [10, 0, 10, 10], alignment: 'center' },
         }
     };
     pdfMake.createPdf(docDefinition).open()
