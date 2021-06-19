@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ggAdmin-pdf/static/css/main.834eba05.chunk.css",
+    "main.js": "/ggAdmin-pdf/static/js/main.8f39267f.chunk.js",
+    "main.js.map": "/ggAdmin-pdf/static/js/main.8f39267f.chunk.js.map",
+    "runtime-main.js": "/ggAdmin-pdf/static/js/runtime-main.e2d4283b.js",
+    "runtime-main.js.map": "/ggAdmin-pdf/static/js/runtime-main.e2d4283b.js.map",
+    "static/js/2.f5cc7c7d.chunk.js": "/ggAdmin-pdf/static/js/2.f5cc7c7d.chunk.js",
+    "static/js/2.f5cc7c7d.chunk.js.map": "/ggAdmin-pdf/static/js/2.f5cc7c7d.chunk.js.map",
+    "index.html": "/ggAdmin-pdf/index.html",
+    "static/css/main.834eba05.chunk.css.map": "/ggAdmin-pdf/static/css/main.834eba05.chunk.css.map",
+    "static/js/2.f5cc7c7d.chunk.js.LICENSE.txt": "/ggAdmin-pdf/static/js/2.f5cc7c7d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e2d4283b.js",
+    "static/js/2.f5cc7c7d.chunk.js",
+    "static/css/main.834eba05.chunk.css",
+    "static/js/main.8f39267f.chunk.js"
+  ]
+}
