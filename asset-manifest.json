@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ggAdmin-pdf/static/css/main.834eba05.chunk.css",
-    "main.js": "/ggAdmin-pdf/static/js/main.b797fd3d.chunk.js",
-    "main.js.map": "/ggAdmin-pdf/static/js/main.b797fd3d.chunk.js.map",
+    "main.js": "/ggAdmin-pdf/static/js/main.98ce9ae6.chunk.js",
+    "main.js.map": "/ggAdmin-pdf/static/js/main.98ce9ae6.chunk.js.map",
     "runtime-main.js": "/ggAdmin-pdf/static/js/runtime-main.e2d4283b.js",
     "runtime-main.js.map": "/ggAdmin-pdf/static/js/runtime-main.e2d4283b.js.map",
     "static/js/2.f5cc7c7d.chunk.js": "/ggAdmin-pdf/static/js/2.f5cc7c7d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.e2d4283b.js",
     "static/js/2.f5cc7c7d.chunk.js",
     "static/css/main.834eba05.chunk.css",
-    "static/js/main.b797fd3d.chunk.js"
+    "static/js/main.98ce9ae6.chunk.js"
   ]
 }
