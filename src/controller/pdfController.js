@@ -55,7 +55,7 @@ function formatData(payload) {
                     table: {
                         body: [
                             [
-                                { text: payload.code.trim(), fontSize: 20, style: ['bold', 'invitedText'] },
+                                { text: payload.code.trim(), fontSize: 20, style: ['bold'] },
                             ]
                         ]
                     }
@@ -79,7 +79,6 @@ function printPDF(payload) {
             marginLeft: { margin: [300, 0, 25, 0], },
             marginTopLeft: { margin: [300, 20, 25, 0], },
             marginBottomLeft: { margin: [300, 0, 25, 20], },
-            invitedText: { margin: [10, 0, 10, 0], alignment: 'center' },
         }
     };
     pdfMake.createPdf(docDefinition).open()
