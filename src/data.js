@@ -5,4 +5,3 @@ this.data.sender = {
     "header": "กรุณาส่ง",
     "telHeader": "Tel."
 }
-this.data.invited = "Your invited code is: "
